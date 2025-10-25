@@ -52,7 +52,7 @@ function XKHax._createMainFrame(screenGui, startYPosition, borderColor)
     mainFrame.Position = UDim2.new(1, 10, 0, startYPosition)
     mainFrame.AnchorPoint = Vector2.new(1, 0)
     mainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-    mainFrame.BackgroundTransparency = 0.8
+    mainFrame.BackgroundTransparency = 0.6
     mainFrame.BorderSizePixel = 0
     mainFrame.ZIndex = 2
     mainFrame.Parent = screenGui

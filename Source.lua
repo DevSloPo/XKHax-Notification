@@ -74,7 +74,7 @@ end
 function XKHax._createIconSection(mainFrame, iconImage, borderColor)
     local iconCircle = Instance.new("Frame")
     iconCircle.Name = "IconCircle"
-    iconCircle.Size = UDim2.new(0, 50, 0, 50)
+    iconCircle.Size = UDim2.new(0, 50, 0, 50)  -- 图标容器大小
     iconCircle.Position = UDim2.new(0, 15, 0, 15)
     iconCircle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
     iconCircle.BackgroundTransparency = 0.5
@@ -93,10 +93,11 @@ function XKHax._createIconSection(mainFrame, iconImage, borderColor)
     iconStroke.Transparency = 0.3
     iconStroke.Parent = iconCircle
     
+    -- 修复图标大小 - 调整为更合适的大小
     local iconImageLabel = Instance.new("ImageLabel")
     iconImageLabel.Name = "IconImage"
-    iconImageLabel.Size = UDim2.new(0.7, 0, 0.7, 0)
-    iconImageLabel.Position = UDim2.new(0.15, 0, 0.15, 0)
+    iconImageLabel.Size = UDim2.new(0.8, 0, 0.8, 0)  -- 增加到80%
+    iconImageLabel.Position = UDim2.new(0.1, 0, 0.1, 0)  -- 调整位置居中
     iconImageLabel.BackgroundTransparency = 1
     iconImageLabel.Image = iconImage
     iconImageLabel.ImageColor3 = Color3.fromRGB(255, 255, 255)
@@ -193,11 +194,11 @@ function XKHax._createGlowEffects(mainFrame, iconCircle, borderColor)
     innerGlow.SliceCenter = Rect.new(20, 20, 20, 20)
     innerGlow.ZIndex = 1
     innerGlow.Parent = mainFrame
-    
+   
     local iconGlow = Instance.new("ImageLabel")
     iconGlow.Name = "IconGlow"
-    iconGlow.Size = UDim2.new(0, 70, 0, 70)
-    iconGlow.Position = UDim2.new(0, -10, 0, -10)
+    iconGlow.Size = UDim2.new(0, 60, 0, 60)  
+    iconGlow.Position = UDim2.new(0, -5, 0, -5)  
     iconGlow.BackgroundTransparency = 1
     iconGlow.Image = "rbxassetid://8992231221"
     iconGlow.ImageColor3 = borderColor
@@ -229,8 +230,9 @@ function XKHax._setupAnimations(mainFrame, iconCircle, glowEffect, innerGlow, ic
         slideOut = TweenService:Create(mainFrame, slideOutInfo, {Position = UDim2.new(1, 10, 0, mainFrame.Position.Y.Offset)}),
         glowTween = TweenService:Create(glowEffect, glowInfo, {ImageTransparency = 0.4}),
         innerGlowTween = TweenService:Create(innerGlow, quickGlowInfo, {ImageTransparency = 0.6}),
+        -- 修复图标光效动画大小
         iconGlowTween = TweenService:Create(iconGlow, TweenInfo.new(0.5, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
-            Size = UDim2.new(0, 80, 0, 80),
+            Size = UDim2.new(0, 65, 0, 65),  -- 调整为65x65
             ImageTransparency = 0.4
         }),
         iconTween = TweenService:Create(iconCircle, TweenInfo.new(0.3, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {

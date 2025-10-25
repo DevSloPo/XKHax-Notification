@@ -95,8 +95,8 @@ function XKHax._createIconSection(mainFrame, iconImage, borderColor)
     
     local iconImageLabel = Instance.new("ImageLabel")
     iconImageLabel.Name = "IconImage"
-    iconImageLabel.Size = UDim2.new(1, 0, 1, 0)
-    iconImageLabel.Position = UDim2.new(0, 0, 0, 0)
+    iconImageLabel.Size = UDim2.new(1.1, 0, 1.1, 0)
+    iconImageLabel.Position = UDim2.new(-0.05, 0, -0.05, 0)
     iconImageLabel.BackgroundTransparency = 1
     iconImageLabel.Image = iconImage
     iconImageLabel.ImageColor3 = Color3.fromRGB(255, 255, 255)
@@ -200,8 +200,8 @@ function XKHax._createGlowEffects(mainFrame, iconCircle, borderColor)
    
     local iconGlow = Instance.new("ImageLabel")
     iconGlow.Name = "IconGlow"
-    iconGlow.Size = UDim2.new(1, 0, 1, 0)
-    iconGlow.Position = UDim2.new(0, 0, 0, 0)
+    iconGlow.Size = UDim2.new(1.1, 0, 1.1, 0)
+    iconGlow.Position = UDim2.new(-0.05, 0, -0.05, 0)
     iconGlow.BackgroundTransparency = 1
     iconGlow.Image = "rbxassetid://8992231221"
     iconGlow.ImageColor3 = borderColor
@@ -238,7 +238,7 @@ function XKHax._setupAnimations(mainFrame, iconCircle, glowEffect, innerGlow, ic
         glowTween = TweenService:Create(glowEffect, glowInfo, {ImageTransparency = 0.4}),
         innerGlowTween = TweenService:Create(innerGlow, quickGlowInfo, {ImageTransparency = 0.6}),
         iconGlowTween = TweenService:Create(iconGlow, TweenInfo.new(0.5, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
-            Size = UDim2.new(1.1, 0, 1.1, 0),
+            Size = UDim2.new(1.2, 0, 1.2, 0),
             ImageTransparency = 0.4
         }),
         iconTween = TweenService:Create(iconCircle, TweenInfo.new(0.3, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
